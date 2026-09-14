@@ -10,16 +10,14 @@ const int MOTOR_SPEED = 210;
 const int TRIG_PIN = 13;
 const int ECHO_PIN = 12;
 const float SPEED_OF_SOUND = 0.0345;
-const int CLOSE_READINGS_REQUIRED = 3;
 const int MAX_INVALID_READINGS = 5;
 const float STOP_DISTANCE_CM = 12.0;
-int closeReadingCount = 0;
 
 // Catapult
 Servo cServo;
 const int SERVO_PIN = 9;
 const int REST_ANGLE = 0;
-const int LAUNCH_ANGLE = 180;
+const int LAUNCH_ANGLE = 70;
 bool launched = false;
 
 void setup() {
@@ -41,16 +39,13 @@ void loop() {
 
   if (isCloseToObstacle()) {
     stop();
-    closeReadingCount++;
-    if (closeReadingCount >= CLOSE_READINGS_REQUIRED) {
-      delay(250);
-      fireCatapult();
-      launched = true;
-    }
+    delay(250);
+    fireCatapult();
+    launched = true;
   } else {
-    closeReadingCount = 0;
     move();
   }
+  
   delay(60);
 }
 
