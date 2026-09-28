@@ -3,9 +3,16 @@
 
 namespace {
   const int LEFT_MOTOR_PIN = 6;
-    const int RIGHT_MOTOR_PIN = 5;
-    const int FRONT_MOTOR_PIN = 3;
-    const int MOTOR_SPEED = 210;
+  const int RIGHT_MOTOR_PIN = 5;
+  const int FRONT_MOTOR_PIN = 3;
+  const int MOTOR_SPEED = 210;
+}
+
+void Wheels::setup() {
+  pinMode(LEFT_MOTOR_PIN, OUTPUT);
+  pinMode(RIGHT_MOTOR_PIN, OUTPUT);
+  pinMode(FRONT_MOTOR_PIN, OUTPUT);
+  stop();
 }
 
 void Wheels::move() {
@@ -20,9 +27,3 @@ void Wheels::stop() {
   analogWrite(FRONT_MOTOR_PIN, 0);
 }
 
-void Wheels::setup() {
-  pinMode(LEFT_MOTOR_PIN, OUTPUT);
-  pinMode(RIGHT_MOTOR_PIN, OUTPUT);
-  pinMode(FRONT_MOTOR_PIN, OUTPUT);
-  stop();
-}
