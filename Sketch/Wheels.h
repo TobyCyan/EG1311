@@ -5,7 +5,7 @@ class Wheels {
 public:
   void setup();
 
-  // Positive: forward. Negative: reverse. Zero: coast.
+  // Positive: forward. Negative: reverse. Zero: stop.
   void move(int speed);
   void brake();
   void stop();

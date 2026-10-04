@@ -12,6 +12,7 @@ namespace {
   const int REAR_IN1_PIN = 4;
   const int REAR_IN2_PIN = 2;
 
+  // Flip option without having to rewire the motors
   const bool FLIP_FRONT_MOTOR = false;
   const bool FLIP_REAR_MOTOR = false;
 }
