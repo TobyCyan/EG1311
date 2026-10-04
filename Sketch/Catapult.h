@@ -4,14 +4,14 @@
 #include <Servo.h>
 
 class Catapult {
-  public:
-    void setup();
-    void fire();
+public:
+  void setup();
+  void fire();
+  void rest();
+  void detach();
 
-  private:
-    void rest();
-
-    Servo servo;
+private:
+  Servo servo;
 };
 
 #endif

@@ -2,13 +2,13 @@
 
 namespace {
   const int SERVO_PIN = 9;
-  const int REST_ANGLE = 0;
-  const int LAUNCH_ANGLE = 70;
+  const int REST_ANGLE = 10;
+  const int LAUNCH_ANGLE = 80;
 }
 
 void Catapult::setup() {
-  servo.attach(SERVO_PIN);
   rest();
+  servo.attach(SERVO_PIN);
 }
 
 void Catapult::fire() {
@@ -17,4 +17,8 @@ void Catapult::fire() {
 
 void Catapult::rest() {
   servo.write(REST_ANGLE);
+}
+
+void Catapult::detach() {
+  servo.detach();
 }
