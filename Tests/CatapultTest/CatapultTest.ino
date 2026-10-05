@@ -2,8 +2,6 @@
 
 Catapult catapult;
 
-const int FAST_SPEED = 255;
-
 void setup() {
   catapult.setup();
   
